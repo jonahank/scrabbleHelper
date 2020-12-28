@@ -3,17 +3,19 @@ public class Word {
     private int score;
     private String name;
     private String engine;
+    private LetterPoints pointSystem;
 
     public Word(String word){
         this.name = word;
         this.engine = word;
+        this.pointSystem = new LetterPoints();
         calculateScore();
     }
 
     private void calculateScore() {
         int helperScore = 0;
-        for (Character character : name.toCharArray()) {
-            helperScore += (int) character;
+        for (Character letter : name.toCharArray()) {
+            helperScore += pointSystem.scoreLetter(letter);
         }
         this.score = helperScore;
     }

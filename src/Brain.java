@@ -19,7 +19,7 @@ public class Brain {
         this.currentScoreInMind = 0;
         this.filePath = file;
         generateAllWords();
-        indexAllWords();        
+        indexAllWords();       
     }
 
     private void generateAllWords() throws IOException {
